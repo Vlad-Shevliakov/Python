@@ -1,27 +1,29 @@
-grid = {
-    'tl': ' ', 'tm': ' ', 'tr': ' ',
-    'ml': ' ', 'mm': ' ', 'mr': ' ',
-    'll': ' ', 'lm': ' ', 'lr': ' '
+inventory = {
+    'rope': 1,
+    'torch': 6,
+    'gold_coin': 42,
+    'arrow': 12
 }
 
-def get_grid():
-    print(grid['tl'] + '|' + grid['tm'] + '|' + grid['tr'])
-    print('-+-+-')
-    print(grid['ml'] + '|' + grid['mm'] + '|' + grid['mr'])
-    print('-+-+-')
-    print(grid['ll'] + '|' + grid['lm'] + '|' + grid['lr'])
+def getIventory(obj):
+    total = 0
+    for key, value in obj.items():
+        total += value
+        print(key + ': ' + str(value))
+    print('Number of items: ' + str(total))
 
-get_grid()
 
-for i in grid:
-    where = input('Where to insert: ')
-    what = input('What to insert: ')
-    try:
-        if grid[where] == ' ':
-            grid[where] = what
-        else:
-            continue
-    except KeyError:
-        print('I need something like: tm, tr, mr...')
-        continue
-    get_grid()
+getIventory(inventory)
+inventory.setdefault
+# add to inventory
+
+loot = ['arrow', 'arrow', 'gold_coin', 'yad']
+
+def add_inventory(loot_array, inventory):
+    print('################################')
+    for item in loot_array:
+        inventory.setdefault(item, 0)
+        inventory[item] = inventory[item] + 1
+    getIventory(inventory)
+
+add_inventory(loot, inventory)
