@@ -1,3 +1,6 @@
-const fact = (n) => n === 1 ? n : n * fact(n - 1)
+const arr = [1, 'a', 2, 'b', 3, 'c']
+arr.forEach((el, ind) => {
+    if (typeof el !== 'number') arr.splice(ind, 1)
+})
 
-fact(5)
+console.log(arr)
