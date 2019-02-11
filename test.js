@@ -1,6 +1,3 @@
-const arr = [1, 'a', 2, 'b', 3, 'c']
-arr.forEach((el, ind) => {
-    if (typeof el !== 'number') arr.splice(ind, 1)
-})
+const string = '/bin:/usr/bin:/usr/local/bin'
 
-console.log(arr)
+console.log(string.split(':'))
