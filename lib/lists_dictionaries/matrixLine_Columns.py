@@ -54,15 +54,12 @@ heroes = [
 ]
 
 def getObjInd():
-    # count = 0
-    # for obj in heroes:
-    #     print('In heroes list {} in {} index'.format(obj, count))
-    #     count += 1
-    for ind, obj in enumerate(heroes):
-        print('In heroes list {} in {} index'.format(obj, ind))
+    count = 0
+    for obj in heroes:
+        print('In heroes list {} in {} index'.format(obj, count))
+        count += 1
 
-
-getObjInd()
+# getObjInd()
 
 
 def filterItems():
@@ -88,4 +85,4 @@ def reverseRender():
     for num in reversed(range(10)):
         print(num)
 
-# reverseRender()
+reverseRender()

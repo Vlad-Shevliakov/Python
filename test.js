@@ -1,3 +1,3 @@
-const string = '/bin:/usr/bin:/usr/local/bin'
-
-console.log(string.split(':'))
+const foo = (str, ...values) {
+    debugger
+}
