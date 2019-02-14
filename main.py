@@ -20,4 +20,17 @@ def getTypleSumm(*args):
             summ += num
     print(summ)
 
-getTypleSumm(1.2, 3, '99', 18, 'hello', 4, {'x': 12}, [1, 3], None)
+# getTypleSumm(1.2, 3, '99', 18, 'hello', 4, {'x': 12}, [1, 3], None)
+
+
+
+def testForAny(a = 0, b = 0):
+    print(a + b)
+
+testForAny(b = 2, a = 3)
+
+def anyKeys(**any):
+    print(any, type(any)) # <class 'dict'>    
+
+
+anyKeys(key = 125320, payload = "SUCCESS")
