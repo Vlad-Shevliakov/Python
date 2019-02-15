@@ -34,3 +34,20 @@ try:
     raise ZeroDivisionError("0 it's 0")
 except ZeroDivisionError:
     pass
+
+def controlRaiseError():
+
+    def getExceptons():
+        s = [ValueError('ValueError'), TypeError('TypeError'), RuntimeError('RuntimeError')]
+        raise s[random.randint(0, 2)]
+
+    try:
+        getExceptons()
+    except ValueError as err:
+        print(err)
+    except TypeError as err:
+        print(err)
+    except RuntimeError as err:
+        print(err)
+
+# controlRaiseError()

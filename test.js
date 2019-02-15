@@ -1,14 +1,17 @@
-const f = (() => {
-    let x = 0
-    return () => {
-        ++x
-        console.log(x)
-    }
-})
+const ol = [18, 221, 45, 7646, 122, 311, 22]
 
-const x = f()
+const sortIntList = array => {
+    const sortedArray = array.map((num, ind) => {
+        if (!Number.isInteger(num)) {
+            throw new Error(`Not integer in ${ind + 1}th element`)
+        }
+        return num
+    })
+    .sort((a, b) => {
+        return a < b ? -1 : 1
+    })
+    return sortedArray
+}
 
-console.log(x())
-console.log(x())
-console.log(x())
-console.log(x())
+let x = sortIntList(ol)
+console.log(x)
