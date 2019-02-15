@@ -1,41 +1,35 @@
-
-ol = [12, 22, 45, 7646, 31, 22]
-
-def sortIntList(list):
-    for ind, num in enumerate(list):
-        if isinstance(num, int):
-            continue
-        raise ValueError('not item: {}'.format(ind + 1))
-    sortList = sorted(list, key = int)
-    return sortList
-
-sortIntList(ol)
-
-# print(sortIntList(ol))
+def func(func, arg):
+    print(func(arg)) # -> 9
 
 
-def getStringDict(obj):
-    newObj = {}
-    for key, value in obj.items():
-        if isinstance(value, str):
-            continue
-        newObj[key] = str(value)
-    return newObj # -> {'name': 'Rick', 'age': '70', 'id': 'C-137', 'isPortalReady': 'True'}
-
-# getStringDict({
-#     'name': 'Rick',
-#     'age': 70,
-#     'id': 'C-137',
-#     'isPortalReady': True
-# })
+# func(len, 'undefined')
 
 
-def composition(*numbers):
-    res = numbers[0]
-    if 0 in numbers:
-        return
-    for num in numbers:
-        res *= num
-    print(res)
+def together(val, *other, **keywords):
+    print(val) # -> 'firts'
+    print(other) # -> ('a', 'b', 'c')
+    print(keywords)
 
-composition(1, 2, 3, 4, 5)
+
+# together('firts', 'a', 'b', 'c', id = 137)
+
+
+def dec(val):
+    def _insideFunction():
+        print('Value: {val}, new value: {new_val}'.format(new_val = new_val, val = val))
+    new_val = str(val * 100)
+    _insideFunction()
+    return new_val
+
+dec(25)
+
+
+def dec1(func):
+    def _insideFunction(val):
+        print(func(val))
+    print('called')
+    return _insideFunction
+
+_dec = dec1(len)
+
+_dec((1, 2, 3))
