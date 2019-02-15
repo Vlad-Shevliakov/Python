@@ -27,10 +27,17 @@ def getTypleSumm(*args):
 def testForAny(a = 0, b = 0):
     print(a + b)
 
-testForAny(b = 2, a = 3)
+# testForAny(b = 2, a = 3)
 
 def anyKeys(**any):
     print(any, type(any)) # <class 'dict'>    
 
 
-anyKeys(key = 125320, payload = "SUCCESS")
+# anyKeys(key = 125320, payload = "SUCCESS")
+
+obj = {
+    'pin': 1234,
+    'name': 'Bob'
+}
+
+anyKeys(**obj)
