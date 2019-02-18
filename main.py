@@ -1,35 +1,35 @@
-def func(func, arg):
-    print(func(arg)) # -> 9
+arr = [9, 4, 5, 67, 1.1, 2, 3.4, 54, 46]
 
 
-# func(len, 'undefined')
+def getMinMaxValue(args):
+    res = sorted(args, key = int)
+    print('Min: {}\nMax: {}'.format(res[0], res[len(args) - 1]))
 
 
-def together(val, *other, **keywords):
-    print(val) # -> 'firts'
-    print(other) # -> ('a', 'b', 'c')
-    print(keywords)
+# getMinMaxValue(arr)
 
 
-# together('firts', 'a', 'b', 'c', id = 137)
+def caseSwitcher(string, isUpCase = False):
+    newString = ''
+    if isUpCase:
+        for substr in string:
+            newString += substr.upper()
+        return newString
+    else:
+        for substr in string:
+            newString += substr.lower()
+        return newString
+
+# print(caseSwitcher('I love Python!'))
 
 
-def dec(val):
-    def _insideFunction():
-        print('Value: {val}, new value: {new_val}'.format(new_val = new_val, val = val))
-    new_val = str(val * 100)
-    _insideFunction()
-    return new_val
 
-dec(25)
+def pyConcat(*strings, glue = ' : '):
+    newString = ''
+    for substr in strings:
+        if len(substr) >= 3:
+            newString += (substr + glue)
+    return newString 
 
 
-def dec1(func):
-    def _insideFunction(val):
-        print(func(val))
-    print('called')
-    return _insideFunction
-
-_dec = dec1(len)
-
-_dec((1, 2, 3))
+# print(pyConcat('So', 'i\'m', 'sure', 'what', 'you', 'don\'t', 'know', 'what', 'is', 'GC'))

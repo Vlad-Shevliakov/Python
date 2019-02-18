@@ -14,4 +14,10 @@ const sortIntList = array => {
 }
 
 let x = sortIntList(ol)
-console.log(x)
+// console.log(x)
+
+const arrow = (...all) => {
+    console.log(all)
+}
+
+arrow(1, 2, 'a', null, '#$%#@qs@%WQ7@#$')
