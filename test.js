@@ -1,4 +1,4 @@
-const ol = [18, 221, 45, 7646, 122, 311, 22]
+const ol = [18, 1,  221, 45, 7646, 122, 311, 22]
 
 const sortIntList = array => {
     const sortedArray = array.map((num, ind) => {
@@ -20,4 +20,12 @@ const arrow = (...all) => {
     console.log(all)
 }
 
-arrow(1, 2, 'a', null, '#$%#@qs@%WQ7@#$')
+arrow(1, 2, 'a', null, '#$%#@qs@@#$')
+
+const getMinAndMAxValue = ([...arr]) => {
+    console.log(`Min value: ${Math.min(...arr)}`)
+    console.log(`Max value: ${Math.max(...arr)}`)
+}
+
+
+getMinAndMAxValue(ol)
