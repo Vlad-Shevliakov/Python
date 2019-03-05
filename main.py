@@ -6,9 +6,15 @@ grid = {
     'll': ' ', 'lm': ' ', 'lr': ' '
 }
 
-picked_arr_items = list(range(len(grid)))
+presentation_grid = {
+    'tl': 'tl', 'tm': 'tm', 'tr': 'tr',
+    'ml': 'ml', 'mm': 'mm', 'mr': 'mr',
+    'll': 'll', 'lm': 'lm', 'lr': 'lr'
+}
 
-def get_grid():
+# picked_arr_items = list(range(len(grid)))
+
+def get_grid(grid):
     print(grid['tl'] + '|' + grid['tm'] + '|' + grid['tr'])
     print('-+-+-')
     print(grid['ml'] + '|' + grid['mm'] + '|' + grid['mr'])
@@ -16,32 +22,37 @@ def get_grid():
     print(grid['ll'] + '|' + grid['lm'] + '|' + grid['lr'])
     print('#' * 7)
 
-# get_grid()
+get_grid(presentation_grid)
 
-def random_add(grid, arr):
-    count = 0
-    for key, value in grid.items():
-        if value != ' ':
-            arr[count] = True
+
+def random_add(grid):
+    points = ['tl', 'tm', 'tr', 'ml', 'mm', 'mr', 'll', 'lm', 'lr']
+    while True:
+        rand_index = random.randint(0, len(points) - 1)
+        if grid[points[rand_index]] == 'X':
+            continue
         else:
-            arr[count] = key
-        count += 1
-    
+            grid[points[random.randint(0, len(points))]] = '0'
+            break
+    get_grid(grid)
 
 
 for trial in range(5):
-    get_grid()
     user_coord = input('Add to: ')
     if user_coord == 'e':
         break
     user_item = input('Add to: ')
+    if user_item != 'X':
+        print('X only!')
+        exit()
     try:
         if grid[user_coord] == ' ':
             grid[user_coord] = user_item[0]
         else:
+            print('I need \'X\'value')
             continue
     except KeyError:
         print('I need something like: tm, tr, mr...')
         continue
-    get_grid()
-    random_add(grid, picked_arr_items)
+    get_grid(grid)
+    random_add(grid)
