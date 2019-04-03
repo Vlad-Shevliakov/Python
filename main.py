@@ -1,13 +1,11 @@
-import http.client
-conn = http.client.HTTPConnection("localhost:3000")
-conn.request("GET", "/ru/latest/")
-r1 = conn.getresponse()
-print(r1.status)
+from pynput.mouse import Button, Controller
 
-data1 = r1.read()
-conn.request("GET", "/parrot.spam")
-r2 = conn.getresponse()
-print(r2.status)
+mouse = Controller()
 
-data2 = r2.read()
-conn.close()
+for i in range(400):
+    mouse.position = (i, i)
+
+mouse.position = (31, 15)
+mouse.click(Button.left, 1)
+mouse.position = (31, 35)
+mouse.click(Button.left, 1)
